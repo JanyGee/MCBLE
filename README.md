@@ -33,7 +33,7 @@
 
 1.开始扫描
 
-````
+````objc
 [[MCBLEManager shareMCBluetooth] scanPeripherals];
 ````
 ***
