@@ -41,15 +41,21 @@
 
 ````objc
 [[MCBLEManager shareMCBluetooth] setBlockOnDiscoverToPeripherals:^(CBCentralManager *central, CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
-}];````
+}];
+
+````
 ***
 3.连接外设
 
-````objc [[MCBLEManager shareMCBluetooth] connectToPeripheral:peripheral];````
+````objc [[MCBLEManager shareMCBluetooth] connectToPeripheral:peripheral];
+
+````
 
 4.停止扫描
 
-````objc [[MCBLEManager shareMCBluetooth] cancelPeripheralConnection:p];````
+````objc [[MCBLEManager shareMCBluetooth] cancelPeripheralConnection:p];
+
+````
 
 ---
 >##指令层使用介绍
@@ -59,7 +65,9 @@
 >````objc - (void)sendBasicSetOfInformationData:(BOOL)metric
 withActivityTimeZone:(NSInteger)timeZone
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -69,7 +77,9 @@ fail:(void (^)(void))fail````
 
 >````objc  - (void)sendLocalTimeInformationData:(NSDate *)date
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 ---
 
@@ -84,20 +94,26 @@ withTarget:(NSInteger)target
 withStepAway:(NSInteger)step
 withSleepTarget:(NSInteger)time
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail```
+fail:(void (^)(void))fail
+
+```
 
 ---
 >4.手机请求设备发送公/英制,12H/24H 制,经常活动地时区,本地日期,本地时间
 
 >````objc - (void)sendRequestBasicSetOfInformationDataSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >5.手机请求设备发送体重,生日,步距
 
 >````objc - (void)sendLookBodyInformationDataWithUpdateSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -106,7 +122,9 @@ fail:(void (^)(void))fail````
 >````objc - (void)sendSetHardwareScreenDataWithDisplayFlag:(BOOL)displayFlag
 waitingFlag:(BOOL)waitingFlag
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -115,14 +133,18 @@ fail:(void (^)(void))fail````
 >````objc - (void)sendPasswordProtectionDataWithOpen:(BOOL)open
 withPassword:(NSString *)password
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >8.手机请求设备的复位信息
 
 >````objc - (void)sendDeviceResetSignalSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -136,14 +158,18 @@ noonSleepTime:(NSDate *)noonSleepTime noonSleepTimeFlag:(BOOL)noonSleepTimeFlag
 noonSleepOverTime:(NSDate *)noonSleepOverTime noonSleepOverTimeFlag:(BOOL)noonSleepOverTimeFlag
 noonSleepRemindTime:(NSDate *)noonSleepRemindTime noonSleepRemindTimeFlag:(BOOL)noonSleepRemindTimeFlag
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >10.手机查询设备的睡眠时间，午休时间
 
 >````objc - (void)sendCheckDeviceSleepTimeSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -163,13 +189,17 @@ messageRemindType:(MessageRemindType)messageRemindType
 lifeTimeOverFlag:(BOOL)lifeTimeOverFlag
 sportCountDownFlag:(BOOL)sportCountDownFlag
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 ---
 >12.手机查询设备的工作界面及免打扰功能
 
 >````objc - (void)sendQueryDeviceInterfaceAndDoNotDistrubTheFunctionSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -177,14 +207,18 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)sendSetAlarmData:(NSArray <NSDictionary *>*)dataArray
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >14.手机查询闹铃时间及使能
 
 >````objc - (void)sendDeviceAlarmTimeAndUseFuctionSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -192,7 +226,9 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)sendSetWearingWayDataWithRightHand:(BOOL)right
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -202,14 +238,18 @@ fail:(void (^)(void))fail````
 setTimeArrary:(NSArray<NSDictionary *>*)setTimeArrary
 quietTime:(NSInteger)quietTime
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >17.手机查询久坐提醒
 
 >````objc - (void)sendDeviceSedentaryRemindSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -218,14 +258,18 @@ fail:(void (^)(void))fail````
 >````objc - (void)sendAutoHRTest:(BOOL)enable
 time:(NSArray<NSDictionary *> *)time
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >19.手机查询设备定时心率测试时间
 
 >````objc - (void)sendQuaryHeartRateMeasureTimeSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -233,7 +277,9 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)sendRequestHistorySportDataWithDate:(NSDate *)date
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -241,7 +287,9 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)sendDeleteSportDataWithDate:(NSDate *)date
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 
@@ -249,14 +297,18 @@ fail:(void (^)(void))fail````
 >22.手机请求设备开启实时传输数据-----APP 自动发送该指令
 
 >````objc - (void)sendRealTimeGetDeviceDataSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >23.手机请求设备传输历史数据的开始日期和结束日期
 
 >````objc - (void)sendHistoricalDataStorageDateWithUpdateSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -264,7 +316,9 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)requestDetailsAtIndex:(NSInteger)index
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -288,13 +342,18 @@ calariMeasureType:(CalariCaculateTyte)calariMeasureType
 sleepFunctionFlag:(BOOL)sleepFunctionFlag
 remindHaveIconFlag:(BOOL)remindHaveIconFlag
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 ---
 >26.手机强制手环充电
 
->````objc - (void)sendDeviceConstraintChargingSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+- (void)sendDeviceConstraintChargingSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
@@ -302,113 +361,173 @@ fail:(void (^)(void))fail````
 
 >````objc - (void)sendOpenCameraOrderState:(BOOL)state
 success:(void(^)(NSData *data))success
-fail:(void(^)(void))fail````
+fail:(void(^)(void))fail
+
+````
 
 
 
 ---
 >28.手机接收成功后此指令不用回调
 
->````objc - (void)sendAnswerDeviceMusicFuction````
+>````objc
+
+- (void)sendAnswerDeviceMusicFuction
+
+````
 
 
 
 ---
 >29.手机请求设备的版本信息
 
->````objc - (void)requestHardwareVirsionSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc
+
+- (void)requestHardwareVirsionSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 
 ---
 >30.手机请求设备启动 ANCS 功能(ios 手机专用)
 
->````objc - (void)requestDeviceOpenANCSSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+
+- (void)requestDeviceOpenANCSSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >31.手机请求设备启动防丢功能
 
->````objc - (void)requestOpenLostFunctionSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+
+- (void)requestOpenLostFunctionSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >32.手机请求设备关闭防丢功能
 
->````objc - (void)requestCloseLostFunctionSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+
+- (void)requestCloseLostFunctionSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >33.手机请求设备震动马达
 
->````objc - (void)requestDeviceShakeSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+
+- (void)requestDeviceShakeSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >34.手机收到报警指令后返回,此指令不需要回调
 
->````objc - (void)sendReceiveDeviceAlarm````
+>````objc 
+
+- (void)sendReceiveDeviceAlarm
+
+````
 
 ---
 >35.手机向设备发送蓝牙广播的名字
 
->````objc - (void)sendDeviceName:(NSString *)name
+>````
+
+objc - (void)sendDeviceName:(NSString *)name
 isBLE:(BOOL)isBLE
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 
 ---
 >36.设备直接进入出厂模式
 
->````objc - (void)requestEnterFactoryModelSuccess:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+>````objc 
+
+- (void)requestEnterFactoryModelSuccess:(void (^)(NSData *data))success
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >37.手机首次连接设备成功后，通知设备震动提醒并显示勾
 
->````objc - (void)sendAlertWhenConnectShakeCount:(int)count
+>````objc 
+
+- (void)sendAlertWhenConnectShakeCount:(int)count
 hook:(BOOL)hook
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 
 ---
 >38.手机发送特定指令和密码
 
->````objc - (void)sendPerpareRestDeviceAtIndex:(int)index
+>````objc 
+
+- (void)sendPerpareRestDeviceAtIndex:(int)index
 success:(void (^)(NSData *data))success
-fail:(void (^)(void))fail````
+fail:(void (^)(void))fail
+
+````
 
 
 ---
 >39.手机再发送确认的数据到设备
 
->````objc - (void)sendPerpareRestDeviceAgain````
+>````objc 
+
+- (void)sendPerpareRestDeviceAgain
+
+````
 
 
 ---
 >40.手机告知设备，准备空中升级
 
->````objc - (void)requestDeviceEnterOTA````
+>````objc 
+
+- (void)requestDeviceEnterOTA
+
+````
 
 
 ---
 >41.获取心率监测数据
 
->````objc - (void)getHeartRateMeasureData:(void(^)(NSInteger bpmValue))dData````
+>````objc
+- (void)getHeartRateMeasureData:(void(^)(NSInteger bpmValue))dData
+````
 
 
 
 ---
 >42.获取实时数据
 
->````objc - (void)getRealTimeData:(void(^)(NSData *data))dData````
+>````objc 
+
+- (void)getRealTimeData:(void(^)(NSData *data))dData
+
+````
